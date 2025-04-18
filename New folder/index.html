@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Beauty Bliss 🌸</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Body Styles */
+        body {
+            background-color: #f3f3f3;
+            color: #333;
+            text-align: center;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+            min-height: 100vh; /* Ensure full height layout */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #ff69b4;
+            padding: 10px 0;
+            z-index: 100;
+            position: relative;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(to right, #ff69b4, #ff7f50);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            color: white;
+            animation: slideUp 1.5s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            color: white;
+            margin: 20px 0;
+            animation: slideUp 2s ease-out;
+        }
+
+        button {
+            background-color: #fff;
+            color: #ff69b4;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff7f50;
+            color: white;
+        }
+
+        /* Beauty Tips Section */
+        #beauty-tips {
+            padding: 50px 20px;
+            margin: 20px 0;
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+
+        .tip-box {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .tip {
+            background-color: #ffebcd;
+            padding: 30px;
+            border-radius: 20px;
+            width: 300px;
+            height: 350px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tip:hover {
+            transform: translateY(-10px); /* Hover effect for animation */
+        }
+
+        .tip h3 {
+            font-size: 1.8em;
+            color: #ff69b4;
+            margin-bottom: 15px;
+        }
+
+        .tip p {
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Skin Care Section */
+        #skin-care {
+            padding: 50px 20px;
+            background-color: #fff;
+            margin: 20px 0;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: #ff69b4;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .intro-text {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .step-card {
+            background-color: #ffebcd;
+            padding: 30px;
+            width: 280px;
+            height: 380px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px); /* Lift effect */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-card h3 {
+            font-size: 1.8em;
+            color: #ff69b4;
+            margin-bottom: 15px;
+        }
+
+        .step-card p {
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .icon {
+            margin-bottom: 20px;
+            font-size: 50px;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #ff69b4;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2em;
+            }
+
+            .hero-content p {
+                font-size: 1.2em;
+            }
+
+            .tip-box {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tip {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .steps-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .step-card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#beauty-tips">Beauty Tips</a></li>
+                <li><a href="#skin-care">Skin Care</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Welcome to Beauty Bliss 🌸</h1>
+            <p>Your ultimate destination for all things beauty 💅</p>
+            <button id="explore-btn">Explore Now</button>
+        </div>
+    </section>
+
+    <!-- Beauty Tips Section -->
+    <section id="beauty-tips">
+        <h2 class="section-title">Beauty Tips 💄</h2>
+        <div class="tip-box">
+            <div class="tip">
+                <h3>Tip #1: Hydrate Your Skin</h3>
+                <p>Drinking enough water is one of the best ways to keep your skin glowing and healthy. Aim for at least 8 glasses of water a day! 💧</p>
+            </div>
+            <div class="tip">
+                <h3>Tip #2: Exfoliate Regularly</h3>
+                <p>Exfoliating helps to remove dead skin cells and reveals fresh, glowing skin underneath. Use a gentle scrub twice a week! ✨</p>
+            </div>
+            <div class="tip">
+                <h3>Tip #3: Use Sunscreen Every Day</h3>
+                <p>Protect your skin from harmful UV rays by wearing sunscreen daily, even if you're indoors. Your skin will thank you! 🌞</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skin Care Section -->
+    <section id="skin-care">
+        <h2 class="section-title">Skin Care Routine 🌿</h2>
+        <div class="section-content">
+            <p class="intro-text">Follow these essential steps for a healthy and glowing skin. 🌟</p>
+            <div class="steps-container">
+                <!-- Step 1: Cleanse -->
+                <div class="step-card">
+                    <div class="icon">💧</div>
+                    <h3>Step 1: Cleanse</h3>
+                    <p>Start with a gentle cleanser to remove dirt, oil, and impurities from your skin. This prepares your skin for the next steps. 💧</p>
+                </div>
+
+                <!-- Step 2: Tone -->
+                <div class="step-card">
+                    <div class="icon">🌿</div>
+                    <h3>Step 2: Tone</h3>
+                    <p>Use a toner to balance your skin's pH levels, removing any remaining impurities and minimizing pores. 🌿</p>
+                </div>
+
+                <!-- Step 3: Serum -->
+                <div class="step-card">
+                    <div class="icon">🧴</div>
+                    <h3>Step 3: Apply Serum</h3>
+                    <p>Choose a serum that addresses your specific skin concerns like wrinkles or pigmentation. 🧴</p>
+                </div>
+
+                <!-- Step 4: Moisturize -->
+                <div class="step-card">
+                    <div class="icon">💦</div>
+                    <h3>Step 4: Moisturize</h3>
+                    <p>Keep your skin hydrated by using a moisturizer that suits your skin type. This helps to maintain softness and elasticity. 💦</p>
+                </div>
+
+                <!-- Step 5: Sunscreen -->
+                <div class="step-card">
+                    <div class="icon">🌞</div>
+                    <h3>Step 5: Sunscreen</h3>
+                    <p>Don’t forget to protect your skin from harmful UV rays by applying sunscreen every day. 🌞</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <p>© 2025 Beauty Bliss. All rights reserved. ✨</p>
+    </footer>
+
+    <script>
+        // Script for Button Interaction
+        document.getElementById('explore-btn').addEventListener('click', () => {
+            document.body.style.backgroundColor = "#ffebcd"; // Change background color
+            document.getElementById('hero').style.display = 'none'; // Hide hero section
+            alert('Enjoy exploring Beauty Bliss 🌸!'); // Show an alert when the button is clicked
+        });
+    </script>
+
+</body>
+</html>
